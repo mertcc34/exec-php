@@ -57,8 +57,8 @@ class Api extends CI_Controller
     public function example() {
 
         $returnArr = array(
-            'exampleCode' => "<?php echo 'TEST EXECUTE PHP';",
-            'exampleRequest' => "{exampleKey : 'exampleValue'}"
+            'exampleCode' => '<?php echo "TEST EXECUTE PHP";',
+            'exampleRequest' => '{"exampleKey" : "exampleValue"}'
         );
 
         return $this->output
