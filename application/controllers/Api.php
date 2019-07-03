@@ -54,6 +54,20 @@ class Api extends CI_Controller
 
     }
 
+    public function example() {
+
+        $returnArr = array(
+            'exampleCode' => "<?php echo 'TEST EXECUTE PHP';",
+            'exampleVariable' => "{exampleKey : 'exampleValue'}"
+        );
+
+        return $this->output
+            ->set_content_type('application/json')
+            ->set_status_header(200)
+            ->set_output(json_encode($returnArr, JSON_PRETTY_PRINT));
+
+    }
+
     public function guuid4() { // MC: Unique for more than 16 char
         $data = openssl_random_pseudo_bytes(16);
         $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
