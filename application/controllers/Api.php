@@ -28,7 +28,8 @@ class Api extends CI_Controller
         file_put_contents($file, $data);
 
         $returnArr = array(
-            'url' => base_url() . 'api/run/' . $uuid
+            'platform' => 'php',
+            'endpoint' => $uuid
         );
 
         return $this->output
